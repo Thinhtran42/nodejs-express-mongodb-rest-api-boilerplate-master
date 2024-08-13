@@ -5,6 +5,7 @@ import { connectDB } from './config/mongodb'
 import requestLoggerMiddleware from './middlewares/requestLogger'
 import { env } from './config/environment'
 import logger from './config/logger'
+import { APIs_V1 } from './routes/v1'
 
 const app = express()
 
@@ -14,9 +15,7 @@ app.use(bodyParser.urlencoded({ extends: true })) // -> Parse URL Request body
 
 connectDB()
 
-app.get('/', (req, res) => {
-    res.end('<h1>Hello World!</h1><hr>')
-})
+app.use('/v1', APIs_V1)
 
 app.use((err, req, res, next) => {
     res.status(500).json({ message: 'Internal Server Error' })
