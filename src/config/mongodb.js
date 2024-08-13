@@ -2,10 +2,10 @@
 /* eslint-disable no-console */
 import { MongoClient } from 'mongodb'
 import logger from './logger'
+import { env } from './environment'
 
-const url =
-    'mongodb+srv://thinhtrandev:g2owZNuqrKn0hBlu@learningnodejs.l704v.mongodb.net/'
-const dbName = 'Trello Clone'
+const url = env.MONGODB_URI
+const dbName = env.DATABASE_NAME
 
 let db
 let client
