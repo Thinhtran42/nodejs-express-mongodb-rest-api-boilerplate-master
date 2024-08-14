@@ -9,7 +9,7 @@ const Router = express.Router()
 Router.get('/status', (req, res) => {
     res
         .status(StatusCodes.OK)
-        .json({ message: 'API v1 ara ready to use', code: StatusCodes.OK })
+        .json({ message: 'API v1 are ready to use', code: StatusCodes.OK })
 })
 
 // boards API

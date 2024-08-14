@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extends: true })) // -> Parse URL Request body
 
 connectDB()
 
-app.use('/v1', APIs_V1)
+app.use('/api/v1', APIs_V1)
 
 app.use((err, req, res, next) => {
     res.status(500).json({ message: 'Internal Server Error' })
